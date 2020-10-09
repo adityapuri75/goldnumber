@@ -42,8 +42,7 @@ class _HomeState extends State<Home> {
           Text("Recent Result",style: TextStyle(
             fontSize: 25
           ),),
-          Expanded(
-              child: RecentGames()),
+            RecentGames(),
               Text("Result",style: GoogleFonts.abrilFatface(
                 fontSize: 29
               ),),
