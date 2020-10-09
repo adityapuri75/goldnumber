@@ -47,12 +47,12 @@ class GamesCard extends StatelessWidget {
       child: Container(
         decoration: BoxDecoration(boxShadow: [
           BoxShadow(
-            color: Colors.yellow,
-            blurRadius: 0.05,
+            color: Color.fromRGBO(149, 76, 233, 1),
+            blurRadius: 0.02,
           )
         ]),
         child: Card(
-          color: Colors.yellow[200],
+          color: Color.fromRGBO(30, 39, 48, 1),
           elevation: 0.2,
           child: Column(
             children: [
@@ -60,7 +60,7 @@ class GamesCard extends StatelessWidget {
                   child: Text(
                 contact[index].tittle,
                 maxLines: 1,
-                style: TextStyle(fontSize: 25, color: Colors.black),
+                style: TextStyle(fontSize: 25, color: Color.fromRGBO(0, 213, 189, 1)),
               )),
               Center(
                   child: Text("(" + contact[index].time + ")",
