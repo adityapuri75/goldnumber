@@ -1,6 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:goldnumber/bloc/bloc.dart';
+import 'package:goldnumber/bloc/games_bloc.dart';
 import 'package:goldnumber/model/game_data.dart';
 
 class GuessNumber extends StatefulWidget {
