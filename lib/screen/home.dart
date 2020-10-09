@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/games_bloc.dart';
 import 'package:goldnumber/bloc/recent_games_bloc.dart';
+import 'package:goldnumber/model/game_data.dart';
+import 'package:goldnumber/model/recent_game.dart';
 import 'package:goldnumber/widget/numbers.dart';
 import 'package:goldnumber/widget/recent_number.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -21,10 +23,12 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Color.fromRGBO(36, 48, 58, 1),
       appBar: AppBar(
+        backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(
-          "Satta",
+          "Gold Satta",
           style: GoogleFonts.lacquer(
             fontSize: 25,
           ),
@@ -32,12 +36,20 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
-          Expanded(
-              child: RecentGames()),
-          Expanded(flex: 2, child: GuessNumber()),
-        ],
+        SizedBox(
+        height: 10,
+      ),
+      Text("Recent Result",style: TextStyle(
+          fontSize: 25
+      ),),
+      Expanded(
+          child: RecentGames()),
+      Text("Result",style: GoogleFonts.abrilFatface(
+          fontSize: 29
+      ),),
+      Expanded(flex: 2, child: GuessNumber()),
+      ],
       ),
     );
   }
 }
-
