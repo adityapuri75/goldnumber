@@ -11,6 +11,8 @@ class RecentGames extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
+
+        height: 150,
           child: StreamBuilder<List<RecentGame>>(
               stream: recentGameList.subject.stream,
               builder: (context, snapshot) {
@@ -19,26 +21,33 @@ class RecentGames extends StatelessWidget {
                   physics: NeverScrollableScrollPhysics(),
                   children:
                   List.generate(snapshot.data.length, (index) {
-                    return Center(
-                      child: Card(
-                        color: Colors.yellow[200],
-                        elevation: 0.2,
-                        child: Column(
-                          children: [
-                            Text(
-                              snapshot.data[index].tittle,
-                              maxLines: 1,
+                    return Card(
+                      color: Color.fromRGBO(30, 39, 48, 1),
+                      elevation: 0.2,
+                      child: Column(
+                        children: [
+                          SizedBox(height: 50,),
+//                          Text(
+//                            snapshot.data[index].tittle,
+//                            maxLines: 1,
+//                            style: TextStyle(
+//                                fontSize: 25, color: Colors.black),
+//                          ),
+                          SizedBox(height: 10,),
+                          Text(
+
+                                  snapshot.data[index].newResult,
                               style: TextStyle(
-                                  fontSize: 25, color: Colors.black),
-                            ),
-                            Text(
-                                "NEW => " +
-                                    snapshot.data[index].newResult,
-                                style: TextStyle(
-                                    fontSize: 20,
-                                    color: Colors.green)),
-                          ],
-                        ),
+                                  fontSize: 20,
+                                  color: Colors.green)),
+                          SizedBox(height: 10,),
+                          Text(
+                            snapshot.data[index].tittle,
+                            maxLines: 1,
+                            style: TextStyle(
+                                fontSize: 25, color: Colors.red),
+                          ),
+                        ],
                       ),
                     );
                   }),

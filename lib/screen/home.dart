@@ -40,16 +40,19 @@ class _HomeState extends State<Home> {
             height: 10,
           ),
           Text("Recent Result",style: TextStyle(
-            fontSize: 25
+            fontSize: 20,
+            color: Color.fromRGBO(255, 120, 0, 1),
           ),),
-          Expanded(
-              child: RecentGames()),
+           RecentGames(),
               Text("Results",style: GoogleFonts.abrilFatface(
                 fontSize: 29,
                 color: Color.fromRGBO(212, 175, 55, 1),
               ),),
           SizedBox(height: 5,),
           Expanded(flex: 2, child: GuessNumber()),
+//      TODO    SizedBox(
+//            height:60
+//          )
         ],
       ),
     );
