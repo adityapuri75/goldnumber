@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/bloc.dart';
 import 'package:goldnumber/model/game_data.dart';
@@ -60,20 +61,33 @@ class GamesCard extends StatelessWidget {
                 style: TextStyle(fontSize: 25, color: Colors.black),
               )),
               Center(
-                  child: Text(contact[index].time,
-                      style: TextStyle(fontSize: 20, color: Colors.black))),
-              Center(
-                  child: Text("OLD => " + contact[index].oldResult,
-                      maxLines: 1,
-                      style: TextStyle(fontSize: 20, color: Colors.black))),
-              Center(
-                  child: (contact[index].newResult.isEmpty)
-                      ? Text(
-                          "WAIT...",
-                          style: TextStyle(fontSize: 25, color: Colors.red),
-                        )
-                      : Text("NEW => " + contact[index].newResult,
-                          style: TextStyle(fontSize: 20, color: Colors.green))),
+                  child: Text("("+contact[index].time+")",
+                      style: TextStyle(fontSize: 12, color: Colors.grey))),
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Text("["+contact[index].oldResult+"]"+" - ",
+                            maxLines: 1,
+                            style: TextStyle(fontSize: 20, color: Colors.redAccent)),
+                        Text(contact[index].newResult,
+                            maxLines: 1,
+                            style: TextStyle(fontSize: 20, color: Colors.green)),
+
+                      ],
+
+                    ),
+              ),
+
+//              Center(
+//                  child: (contact[index].newResult.isEmpty)
+//                      ? Text(
+//                          "WAIT...",
+//                          style: TextStyle(fontSize: 25, color: Colors.red),
+//                        )
+//                      : Text("NEW => " + contact[index].newResult,
+//                          style: TextStyle(fontSize: 20, color: Colors.green))),
             ],
           ),
         ),
