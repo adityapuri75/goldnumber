@@ -44,9 +44,11 @@ class _HomeState extends State<Home> {
           ),),
           Expanded(
               child: RecentGames()),
-              Text("Result",style: GoogleFonts.abrilFatface(
-                fontSize: 29
+              Text("Results",style: GoogleFonts.abrilFatface(
+                fontSize: 29,
+                color: Color.fromRGBO(212, 175, 55, 1),
               ),),
+          SizedBox(height: 5,),
           Expanded(flex: 2, child: GuessNumber()),
         ],
       ),
