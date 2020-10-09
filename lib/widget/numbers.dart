@@ -17,6 +17,8 @@ class _GuessNumberState extends State<GuessNumber> {
         List<Game> contact = snapshot.data;
         if (snapshot.hasData) {
           return GridView.count(
+          shrinkWrap: true,
+                        scrollDirection: Axis.vertical,
             crossAxisCount: 2,
             childAspectRatio: 100 / 70,
             children: List.generate(contact.length, (index) {
@@ -61,23 +63,22 @@ class GamesCard extends StatelessWidget {
                 style: TextStyle(fontSize: 25, color: Colors.black),
               )),
               Center(
-                  child: Text("("+contact[index].time+")",
+                  child: Text("(" + contact[index].time + ")",
                       style: TextStyle(fontSize: 12, color: Colors.grey))),
               Padding(
                 padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Text("["+contact[index].oldResult+"]"+" - ",
-                            maxLines: 1,
-                            style: TextStyle(fontSize: 20, color: Colors.redAccent)),
-                        Text(contact[index].newResult,
-                            maxLines: 1,
-                            style: TextStyle(fontSize: 20, color: Colors.green)),
-
-                      ],
-
-                    ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    Text("[" + contact[index].oldResult + "]" + " - ",
+                        maxLines: 1,
+                        style:
+                            TextStyle(fontSize: 20, color: Colors.redAccent)),
+                    Text(contact[index].newResult,
+                        maxLines: 1,
+                        style: TextStyle(fontSize: 20, color: Colors.green)),
+                  ],
+                ),
               ),
 
 //              Center(

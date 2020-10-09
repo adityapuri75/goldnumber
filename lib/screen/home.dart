@@ -32,8 +32,17 @@ class _HomeState extends State<Home> {
       ),
       body: Column(
         children: [
+          SizedBox(
+            height: 10,
+          ),
+          Text("Recent Result",style: TextStyle(
+            fontSize: 25
+          ),),
           Expanded(
               child: RecentGames()),
+              Text("Result",style: GoogleFonts.abrilFatface(
+                fontSize: 29
+              ),),
           Expanded(flex: 2, child: GuessNumber()),
         ],
       ),
