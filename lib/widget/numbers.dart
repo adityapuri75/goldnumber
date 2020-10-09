@@ -68,7 +68,7 @@ class GamesCard extends StatelessWidget {
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Text("["+contact[index].oldResult+"]"+" - ",
+                        Text("["+contact[index].oldResult +"]"+" - ",
                             maxLines: 1,
                             style: TextStyle(fontSize: 20, color: Colors.redAccent)),
                         Text(contact[index].newResult,
