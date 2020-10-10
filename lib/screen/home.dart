@@ -42,10 +42,11 @@ class _HomeState extends State<Home> {
           Text("Recent Result",style: TextStyle(
             fontSize: 25
           ),),
-            RecentGames(),
+            Expanded(child: RecentGames()),
               Text("Result",style: GoogleFonts.abrilFatface(
-                fontSize: 29
+                fontSize: 29,color: Color.fromRGBO(212, 175, 55, 1),
               ),),
+              SizedBox(height: 5,),
           Expanded(flex: 2, child: GuessNumber()),
         ],
       ),
