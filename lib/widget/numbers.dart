@@ -57,14 +57,20 @@ class GamesCard extends StatelessWidget {
           child: Column(
             children: [
               Center(
-                  child: Text(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Text(
                 contact[index].tittle,
                 maxLines: 1,
                 style: TextStyle(fontSize: 25, color: Color.fromRGBO(0, 213, 189, 1)),
-              )),
+              ),
+                  )),
+              Spacer(),
               Center(
                   child: Text("(" + contact[index].time + ")",
-                      style: TextStyle(fontSize: 12, color: Colors.grey))),
+                      style: TextStyle(fontSize: 14, color: Colors.grey[200]))),
+              Spacer(),
+
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Row(
@@ -80,6 +86,7 @@ class GamesCard extends StatelessWidget {
                   ],
                 ),
               ),
+              Spacer(),
 
 //              Center(
 //                  child: (contact[index].newResult.isEmpty)
