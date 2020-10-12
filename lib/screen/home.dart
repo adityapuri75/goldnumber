@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/games_bloc.dart';
 import 'package:goldnumber/bloc/recent_games_bloc.dart';
-import 'package:goldnumber/screen/chart_screen.dart';
 import 'package:goldnumber/widget/drwer.dart';
 import 'package:goldnumber/widget/numbers.dart';
 import 'package:goldnumber/widget/recent_number.dart';
@@ -30,17 +29,7 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(36, 48, 58, 1),
       appBar: AppBar(
-        actions: [
-          IconButton(
-              icon: Icon(Icons.show_chart),
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => ChartScreen(),
-                    ));
-              })
-        ],
+     
         backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(

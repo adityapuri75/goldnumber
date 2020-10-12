@@ -1,9 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:goldnumber/widget/chart_results.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatelessWidget {
- 
-
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -17,7 +16,7 @@ class CustomDrawer extends StatelessWidget {
               children: <Widget>[
                 Container(
                   margin: EdgeInsets.only(top: 30),
-                  child: Image.asset('images/Sm1.png'),
+                  child: null,
                   width: 50,
                   height: 50,
                   decoration: BoxDecoration(
@@ -40,6 +39,11 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.web),
             onTap: () {
+              Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Chart("Gali"),
+                  ));
               // createBannerAd()
               //   ..load()
               //   ..show();
@@ -48,11 +52,16 @@ class CustomDrawer extends StatelessWidget {
 
               // launchURL(url[0]);
             },
-            title: Text("GALI RECORD"),
+            title: Text("GALI CHART"),
           ),
           ListTile(
             leading: Icon(Icons.web_asset),
             onTap: () {
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Chart("Disawar"),
+                  ));
               // createBannerAd()
               //   ..load()
               //   ..show();
@@ -65,6 +74,11 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.web),
             onTap: () {
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Chart("FARIDABAD"),
+                  ));
               // createBannerAd()
               //   ..load()
               //   ..show();
@@ -79,6 +93,11 @@ class CustomDrawer extends StatelessWidget {
           ListTile(
             leading: Icon(Icons.web_asset),
             onTap: () {
+               Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => Chart("Ghaziabad"),
+                  ));
               // createBannerAd()
               //   ..load()
               //   ..show();
@@ -98,16 +117,6 @@ class CustomDrawer extends StatelessWidget {
             },
             title: Text("Join Telegram For Updates"),
             leading: Icon(Icons.update),
-          ),
-          ListTile(
-            title: Text("Donation"),
-            leading: Icon(Icons.monetization_on),
-            // onTap: () => Navigator.push(
-            //   context,
-            //   MaterialPageRoute(
-            //     builder: (context) => DonationScreen(),
-            //   ),
-            // ),
           ),
           ListTile(
             title: Text("Privicy Policy"),
