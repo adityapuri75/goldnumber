@@ -8,7 +8,7 @@ class RecentGames extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Container(
-          height: 150,
+          height: 160,
           child: StreamBuilder<List<RecentGame>>(
                 stream: recentGameList.subject.stream,
                 builder: (context, snapshot) {
@@ -22,23 +22,25 @@ class RecentGames extends StatelessWidget {
                   elevation: 0.2,
                   child: Column(
                     children: [
-                      SizedBox(
-                        height: 50,
-                      ),
-                      SizedBox(
-                        height: 10,
-                      ),
+                      Padding(
+                      padding: const EdgeInsets.all(0.0),
+                  child: Image(
+                    image: AssetImage('Images/crown.png'),
+                    height: 80,
+                    width: 150,
+                  ),
+                ),
                       Text(snapshot.data[index].newResult,
                           style: TextStyle(
-                              fontSize: 20, color: Colors.green)),
+                              fontSize: 25, color: Colors.green)),
                       SizedBox(
-                        height: 10,
+                        height: 6,
                       ),
                       Text(
                         snapshot.data[index].tittle,
                         maxLines: 1,
                         style: TextStyle(
-                            fontSize: 25, color: Colors.red),
+                            fontSize: 30, color: Colors.red),
                       ),
                     ],
                   ),

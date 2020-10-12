@@ -44,9 +44,10 @@ class _HomeState extends State<Home> {
         backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(
-          "Gold Satta",
-          style: GoogleFonts.lacquer(
-            fontSize: 25,
+          "Guru Satta",
+          style: GoogleFonts.abrilFatface(
+            fontSize: 29,
+            color: Colors.white,
           ),
         ),
       ),
@@ -59,10 +60,13 @@ class _HomeState extends State<Home> {
                 height: 10,
               ),
               Text(
-                "Recent Result",
-                style: TextStyle(fontSize: 25),
+                "Upcoming Results",
+                style: GoogleFonts.abrilFatface(
+                  fontSize: 22,
+                  color: Color.fromRGBO(212, 175, 55, 1),
+                ),
               ),
-              Expanded(child: RecentGames()),
+              RecentGames(),
               Text(
                 "Result",
                 style: GoogleFonts.abrilFatface(
@@ -73,7 +77,7 @@ class _HomeState extends State<Home> {
               SizedBox(
                 height: 5,
               ),
-              GuessNumber(),
+              Expanded(child: GuessNumber()),
             ],
           ),
         ),
