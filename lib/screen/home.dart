@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/games_bloc.dart';
 import 'package:goldnumber/bloc/recent_games_bloc.dart';
-import 'package:goldnumber/repository/auth.dart';
 import 'package:goldnumber/screen/chart_screen.dart';
+import 'package:goldnumber/widget/drwer.dart';
 import 'package:goldnumber/widget/numbers.dart';
 import 'package:goldnumber/widget/recent_number.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,6 +51,7 @@ class _HomeState extends State<Home> {
           ),
         ),
       ),
+      drawer: CustomDrawer(),
       body: RefreshIndicator(
         onRefresh: () => _getData(),
         child: Container(
@@ -85,3 +86,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+
