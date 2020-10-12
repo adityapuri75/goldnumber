@@ -58,7 +58,7 @@ class _HomeState extends State<Home> {
               ),
               RecentGames(),
               Text(
-                "Result",
+                "Results",
                 style: GoogleFonts.abrilFatface(
                   fontSize: 29,
                   color: Color.fromRGBO(212, 175, 55, 1),

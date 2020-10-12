@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/model/chart.dart';
 import 'package:goldnumber/repository/auth.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class Chart extends StatefulWidget {
   String name;
@@ -14,9 +15,13 @@ class _ChartState extends State<Chart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        backgroundColor: Color.fromRGBO(36, 48, 58, 1),
         appBar: AppBar(
           centerTitle: true,
-          title: Text(widget.name+" Chart"),
+          title: Text(widget.name+" Chart",style: GoogleFonts.abrilFatface(
+            fontSize: 29,
+            color: Colors.white,
+          ),),
         ),
         body: FutureBuilder<GameChart>(
             future: getChartData(widget.name),
@@ -29,6 +34,10 @@ class _ChartState extends State<Chart> {
                         return Padding(
                           padding: const EdgeInsets.all(8.0),
                           child: Card(
+                            shadowColor: Color.fromRGBO(149, 76, 233, 1),
+                            elevation: 8,
+                            color: Color.fromRGBO(30, 39, 48, 1),
+
                             child: Padding(
                               padding: const EdgeInsets.all(16.0),
                               child: Container(
@@ -40,30 +49,37 @@ class _ChartState extends State<Chart> {
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text("Result Date"),
-                                        Text(name[index].resultDate)
+                                        Text("Result Date",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20),),
+                                        Text(name[index].resultDate,style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20),),
                                       ],
                                     ),
-                                    Divider(),
+                                    Divider(
+                                      color: Colors.grey,
+                                    ),
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text("Bazar Name"),
-                                        Text(name[index].bazarName)
+                                        Text("Bazar Name",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20),),
+                                        Text(name[index].bazarName,style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20,),)
                                       ],
                                     ),
-                                    Divider(),
+                                    Divider(
+                                      color: Colors.grey,
+                                    ),
 
                                     Row(
                                       mainAxisAlignment:
                                           MainAxisAlignment.spaceBetween,
                                       children: [
-                                        Text("Result"),
-                                        Text(name[index].result)
+                                        Text("Result",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20),),
+                                        Text(name[index].result,style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 20),)
                                       ],
                                     ),
-                                    Divider(),
+                                    Divider(
+                                      color: Colors.white,
+                                      thickness: 0.5,
+                                    ),
 
                                   ],
                                 ),
