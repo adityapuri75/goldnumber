@@ -28,13 +28,27 @@ Future<GameChart> getChartData(String game) async {
     encoding: Encoding.getByName("utf-8"),
     body: "bazar_name=$game&bazar_type=King Bazar",
   );
-    
-    print(response.body);
-    return gameChartFromJson(response.body);
- 
+
+  print(response.body);
+  return gameChartFromJson(response.body);
 }
 
 Future<List<Post>> getPost() async {
   var response = await http.get("https://goldnumber.herokuapp.com/guess");
   return postFromJson(response.body);
+}
+
+Future newPost(String name,String number,String des,String image) async {
+  var response = await http.post("https://goldnumber.herokuapp.com/guess",
+      headers: <String, String>{
+      'Content-Type': 'application/json; charset=UTF-8',
+    },
+      body: jsonEncode(<String, String>{
+        "Name":name,
+        "Number": number,
+        "des": des,
+        "image": image
+      }));
+
+  print(response.body);
 }

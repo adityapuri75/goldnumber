@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/post_bloc.dart';
+import 'package:goldnumber/screen/admin_screen.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -172,6 +173,15 @@ class CustomDrawer extends StatelessWidget {
             ),
             Divider(
               thickness: 2,
+            ),
+            ListTile(
+              title: Text("Admin Page",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
+              leading: Icon(Icons.person,color: Color.fromRGBO(149, 76, 233, 1)),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => AdminScreen(),
+                  )),
             ),
           ],
         ),
