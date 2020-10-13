@@ -43,7 +43,7 @@ class CustomDrawer extends StatelessWidget {
               ),
             ),
             ListTile(
-              leading: Icon(Icons.insert_chart,
+              leading: Icon(Icons.multiline_chart,
                   color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
                 Navigator.push(context,
@@ -211,7 +211,7 @@ class CustomDrawer extends StatelessWidget {
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
               leading:
-                  Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
+                  Icon(Icons.settings_applications, color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

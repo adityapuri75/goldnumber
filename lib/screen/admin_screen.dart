@@ -10,21 +10,21 @@ class AdminScreen extends StatelessWidget {
   final des = TextEditingController();
   final imgUrl = TextEditingController();
 
-  // newPostData() async {
-  //   var message = await newPost(gameName.text, number.text, null, null);
-  //   if (message.contains("ValidatorError"))
-  //     Get.snackbar("Unsuccesful", "Post Not Added",
-  //         snackPosition: SnackPosition.BOTTOM,
-  //         backgroundColor: Colors.black,
-  //         colorText: Colors.white,
-  //         duration: Duration(seconds: 5));
-
-  //   Get.snackbar("Succesful", "Post Added",
-  //       snackPosition: SnackPosition.BOTTOM,
-  //       backgroundColor: Colors.black,
-  //       colorText: Colors.white,
-  //       duration: Duration(seconds: 5));
-  // }
+  showSnak(var message) async {
+    if (message.contains("ValidatorError")) {
+      Get.snackbar("Unsuccesful", "Post Not Added",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.black,
+          colorText: Colors.white,
+          duration: Duration(seconds: 5));
+    } else {
+      Get.snackbar("Succesful", "Post Added",
+          snackPosition: SnackPosition.BOTTOM,
+          backgroundColor: Colors.black,
+          colorText: Colors.white,
+          duration: Duration(seconds: 5));
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -57,20 +57,30 @@ class AdminScreen extends StatelessWidget {
               height: 20,
             ),
             Container(
-                child: CustomTextField(
-              icon: Icons.description,
-              hint: "Description",
-              controller: des,
-            )),
+                child: TextFormField(
+                  maxLines: 3,
+                  controller: des,
+                  decoration: InputDecoration(
+                    hintText: "Description",
+                    prefixIcon: Icon(
+                      Icons.description,
+                    ),
+                    filled: true,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                  ),
+                ),),
             SizedBox(
               height: 20,
             ),
-            Container(
-                child: CustomTextField(
-              icon: Icons.image,
-              hint: "Put the Image",
-              controller: imgUrl,
-            )),
+
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
@@ -79,33 +89,11 @@ class AdminScreen extends StatelessWidget {
                   if (des.text.isNotEmpty || imgUrl.text.isNotEmpty) {
                     var message = await newPost(
                         gameName.text, number.text, des.text, imgUrl.text);
-                    if (message.contains("ValidatorError"))
-                      Get.snackbar("Unsuccesful", "Post Not Added",
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Colors.black,
-                          colorText: Colors.white,
-                          duration: Duration(seconds: 5));
-
-                    Get.snackbar("Succesful", "Post Added",
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.black,
-                        colorText: Colors.white,
-                        duration: Duration(seconds: 5));
+                    showSnak(message);
                   } else {
                     var message =
                         await newPost(gameName.text, number.text, null, null);
-                    if (message.contains("ValidatorError"))
-                      Get.snackbar("Unsuccesful", "Post Not Added",
-                          snackPosition: SnackPosition.BOTTOM,
-                          backgroundColor: Colors.black,
-                          colorText: Colors.white,
-                          duration: Duration(seconds: 5));
-
-                    Get.snackbar("Succesful", "Post Added",
-                        snackPosition: SnackPosition.BOTTOM,
-                        backgroundColor: Colors.black,
-                        colorText: Colors.white,
-                        duration: Duration(seconds: 5));
+                    showSnak(message);
                   }
                 },
                 child: Text(
