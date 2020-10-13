@@ -9,7 +9,7 @@ class CustomDrawer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Drawer(
       child: Container(
-        color:Color.fromRGBO(36, 48, 58, 1),
+        color: Color.fromRGBO(36, 48, 58, 1),
         child: ListView(
           children: [
             Container(
@@ -35,21 +35,19 @@ class CustomDrawer extends StatelessWidget {
                     margin: EdgeInsets.only(top: 28),
                     child: Text(
                       "Guru Satta",
-                      style: GoogleFonts.abrilFatface(fontSize: 25,color: Colors.white),
+                      style: GoogleFonts.abrilFatface(
+                          fontSize: 25, color: Colors.white),
                     ),
                   ),
                 ],
               ),
             ),
-             ListTile(
-              leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
+            ListTile(
+              leading: Icon(Icons.multiline_chart,
+                  color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
-
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) =>PostScreen()
-                    ));
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => PostScreen()));
                 // createBannerAd()
                 //   ..load()
                 //   ..show();
@@ -58,13 +56,18 @@ class CustomDrawer extends StatelessWidget {
 
                 // launchURL(url[0]);
               },
-              title: Text("Guess Form",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
-            ), 
-             Divider(
+              title: Text(
+                "Guess Form",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+            ),
+            Divider(
               thickness: 2,
             ),
             ListTile(
-              leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
+              leading: Icon(Icons.insert_chart,
+                  color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
                 Navigator.push(
                     context,
@@ -79,15 +82,20 @@ class CustomDrawer extends StatelessWidget {
 
                 // launchURL(url[0]);
               },
-              title: Text("GALI CHART",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
+              title: Text(
+                "GALI CHART",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
             ),
             Divider(
               thickness: 2,
             ),
             ListTile(
-              leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
+              leading: Icon(Icons.insert_chart,
+                  color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
-                 Navigator.push(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Chart("Disawar"),
@@ -99,15 +107,20 @@ class CustomDrawer extends StatelessWidget {
                 // videoAd.show();
                 // launchURL(url[1]);
               },
-              title: Text("DESHAWER CHART",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
+              title: Text(
+                "DESHAWER CHART",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
             ),
             Divider(
               thickness: 2,
             ),
             ListTile(
-              leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
+              leading: Icon(Icons.insert_chart,
+                  color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
-                 Navigator.push(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Chart("FARIDABAD"),
@@ -121,15 +134,20 @@ class CustomDrawer extends StatelessWidget {
                 //   ..show();
                 // launchURL(url[2]);
               },
-              title: Text("FARIDABAD CHART",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
+              title: Text(
+                "FARIDABAD CHART",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
             ),
             Divider(
               thickness: 2,
             ),
             ListTile(
-              leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
+              leading: Icon(Icons.insert_chart,
+                  color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
-                 Navigator.push(
+                Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => Chart("Ghaziabad"),
@@ -143,7 +161,11 @@ class CustomDrawer extends StatelessWidget {
                 //   ..show();
                 // launchURL(url[3]);
               },
-              title: Text("GAZIYABAD CHART",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
+              title: Text(
+                "GAZIYABAD CHART",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
             ),
             Divider(
               thickness: 2,
@@ -154,15 +176,25 @@ class CustomDrawer extends StatelessWidget {
                 //   // _launched = _launchInBrowser(_launchUrl);
                 // });
               },
-              title: Text("Join Telegram For Updates",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
-              leading: Icon(Icons.update,color: Color.fromRGBO(149, 76, 233, 1)),
+              title: Text(
+                "Join Telegram For Updates",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+              leading:
+                  Icon(Icons.update, color: Color.fromRGBO(149, 76, 233, 1)),
             ),
             Divider(
               thickness: 2,
             ),
             ListTile(
-              title: Text("Privicy Policy",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
-              leading: Icon(Icons.person,color: Color.fromRGBO(149, 76, 233, 1)),
+              title: Text(
+                "Privicy Policy",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+              leading:
+                  Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
               // onTap: () => Navigator.push(
               //     context,
               //     MaterialPageRoute(
@@ -173,8 +205,13 @@ class CustomDrawer extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              title: Text("Admin Page",style: TextStyle(color: Color.fromRGBO(212, 175, 55, 1),fontSize: 16),),
-              leading: Icon(Icons.person,color: Color.fromRGBO(149, 76, 233, 1)),
+              title: Text(
+                "Admin Page",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+              leading:
+                  Icon(Icons.settings_applications, color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () => Navigator.push(
                   context,
                   MaterialPageRoute(

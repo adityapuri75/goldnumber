@@ -40,49 +40,36 @@ class _EditPostState extends State<EditPost> {
                           padding: const EdgeInsets.all(16.0),
                           child: Container(
                               child: Column(
-
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Row(
-                                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Column(
-                                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Text(
-                                        post[index].name,
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      Text(
-                                        snapshot.data[index].number,
-                                        style: TextStyle(color: Colors.white),
-                                      ),
-                                      (post[index].des == null)
-                                          ? Text(
-                                              "xx",
-                                            )
-                                          : Text(
-                                              post[index].des,
-                                              style: TextStyle(
-                                                  color: Colors.white),
-                                            ),
-                                      (post[index].image != null)
-                                          ? Image.network(
-                                              post[index].image,
-                                            )
-                                          : Text(
-                                              "xx",
-                                            )
-                                    ],
+                              Text(
+
+                                post[index].name,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              Text(
+                                snapshot.data[index].number,
+                                style: TextStyle(color: Colors.white),
+                              ),
+                              (post[index].des == null)
+                                  ? Text(
+                                      "xx",
+                                    )
+                                  : Text(
+                                      post[index].des,
+                                      style: TextStyle(
+                                          color: Colors.white),
+                                    ),
+
+                              IconButton(
+                                  icon: Icon(
+                                    Icons.delete,
+                                    color: Colors.red,
                                   ),
-                                  IconButton(
-                                      icon: Icon(Icons.delete,color: Colors.red,),
-                                      onPressed: () {
-                                        deletePost(post[index].id);
-                                        postListBloc..getPosts();
-                                      })
-                                ],
-                              )
+                                  onPressed: () {
+                                    deletePost(post[index].id);
+                                    postListBloc..getPosts();
+                                  })
                             ],
                           )),
                         ),
