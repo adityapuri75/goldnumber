@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:goldnumber/bloc/post_bloc.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
@@ -45,7 +44,6 @@ class CustomDrawer extends StatelessWidget {
              ListTile(
               leading: Icon(Icons.insert_chart,color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
-                    // postListBloc..getPosts();
 
                 Navigator.push(
                     context,

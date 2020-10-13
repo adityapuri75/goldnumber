@@ -50,6 +50,13 @@ Future newPost(String name, String number, String des, String image) async {
         "image": image
       }));
 
-  print(response.body);
+  return response.body;
+}
+
+Future deletePost(String id) async {
+  var response = await http.delete(
+    "https://goldnumber.herokuapp.com/guess/" + id,
+  );
+
   return response.body;
 }
