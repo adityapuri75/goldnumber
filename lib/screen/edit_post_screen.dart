@@ -53,7 +53,7 @@ class _EditPostState extends State<EditPost> {
                               ),
                               (post[index].des == null)
                                   ? Text(
-                                      "xx",
+                                      "",
                                     )
                                   : Text(
                                       post[index].des,

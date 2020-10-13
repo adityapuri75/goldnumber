@@ -56,27 +56,31 @@ class AdminScreen extends StatelessWidget {
             SizedBox(
               height: 20,
             ),
-            Container(
-                child: TextFormField(
-                  maxLines: 3,
-                  controller: des,
-                  decoration: InputDecoration(
-                    hintText: "Description",
-                    prefixIcon: Icon(
-                      Icons.description,
+            Padding(
+
+                padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                  child: TextFormField(
+                    maxLines: 3,
+                    controller: des,
+                    decoration: InputDecoration(
+                      hintText: "Description",
+                      prefixIcon: Icon(
+                        Icons.description,
+                      ),
+                      filled: true,
+                      enabledBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: Colors.white)),
+                      focusedBorder: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: Colors.white)),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(20),
+                          borderSide: BorderSide(color: Colors.white)),
                     ),
-                    filled: true,
-                    enabledBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(color: Colors.white)),
-                    focusedBorder: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(color: Colors.white)),
-                    border: OutlineInputBorder(
-                        borderRadius: BorderRadius.circular(20),
-                        borderSide: BorderSide(color: Colors.white)),
-                  ),
-                ),),
+                  ),),
+            ),
             SizedBox(
               height: 20,
             ),

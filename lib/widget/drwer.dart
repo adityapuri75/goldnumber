@@ -20,13 +20,14 @@ class CustomDrawer extends StatelessWidget {
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(top: 30),
-                    child: null,
+                    child: Image(
+                      image: AssetImage('Images/crown.png'),
+                      height: 400,
+                      width: 400,
+                    ),
                     width: 50,
                     height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.yellow,
-                    ),
+
                   ),
                   SizedBox(
                     width: 15,
