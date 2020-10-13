@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:goldnumber/model/chart.dart';
 import 'package:goldnumber/model/game_data.dart';
+import 'package:goldnumber/model/posts.dart';
 import 'package:goldnumber/model/recent_game.dart';
 import 'package:http/http.dart' as http;
 
@@ -27,8 +28,35 @@ Future<GameChart> getChartData(String game) async {
     encoding: Encoding.getByName("utf-8"),
     body: "bazar_name=$game&bazar_type=King Bazar",
   );
-    
-    print(response.body);
-    return gameChartFromJson(response.body);
- 
+
+  print(response.body);
+  return gameChartFromJson(response.body);
+}
+
+Future<List<Post>> getPost() async {
+  var response = await http.get("https://goldnumber.herokuapp.com/guess");
+  return postFromJson(response.body);
+}
+
+Future newPost(String name, String number, String des, String image) async {
+  var response = await http.post("https://goldnumber.herokuapp.com/guess",
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        "Name": name,
+        "Number": number,
+        "des": des,
+        "image": image
+      }));
+
+  return response.body;
+}
+
+Future deletePost(String id) async {
+  var response = await http.delete(
+    "https://goldnumber.herokuapp.com/guess/" + id,
+  );
+
+  return response.body;
 }
