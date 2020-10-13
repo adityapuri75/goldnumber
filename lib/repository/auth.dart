@@ -2,6 +2,7 @@ import 'dart:convert';
 
 import 'package:goldnumber/model/chart.dart';
 import 'package:goldnumber/model/game_data.dart';
+import 'package:goldnumber/model/posts.dart';
 import 'package:goldnumber/model/recent_game.dart';
 import 'package:http/http.dart' as http;
 
@@ -31,4 +32,9 @@ Future<GameChart> getChartData(String game) async {
     print(response.body);
     return gameChartFromJson(response.body);
  
+}
+
+Future<List<Post>> getPost() async {
+  var response = await http.get("https://goldnumber.herokuapp.com/guess");
+  return postFromJson(response.body);
 }
