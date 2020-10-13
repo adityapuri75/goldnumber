@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:goldnumber/repository/auth.dart';
 import 'package:goldnumber/widget/custom_textfield.dart';
 
@@ -7,7 +8,6 @@ class AdminScreen extends StatelessWidget {
   final number = TextEditingController();
   final des = TextEditingController();
   final imgUrl = TextEditingController();
-
 
   @override
   Widget build(BuildContext context) {
@@ -58,9 +58,22 @@ class AdminScreen extends StatelessWidget {
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
                 elevation: 5,
-                onPressed: () async {
-                  await newPost(
+                onPressed: () async{
+                 var message=  await newPost(
                       gameName.text, number.text, des.text, imgUrl.text);
+                    if(message.contains("ValidatorError")) 
+                  Get.snackbar("Unsuccesful", "Post Not Added",
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.black,
+                      colorText: Colors.white,
+                      duration: Duration(seconds: 5));
+
+                  Get.snackbar("Succesful", "Post Added",
+                      snackPosition: SnackPosition.BOTTOM,
+                      backgroundColor: Colors.black,
+                      colorText: Colors.white,
+                      duration: Duration(seconds: 5));
+
                 },
                 child: Text(
                   "Submit",

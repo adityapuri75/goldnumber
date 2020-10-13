@@ -38,17 +38,18 @@ Future<List<Post>> getPost() async {
   return postFromJson(response.body);
 }
 
-Future newPost(String name,String number,String des,String image) async {
+Future newPost(String name, String number, String des, String image) async {
   var response = await http.post("https://goldnumber.herokuapp.com/guess",
       headers: <String, String>{
-      'Content-Type': 'application/json; charset=UTF-8',
-    },
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
       body: jsonEncode(<String, String>{
-        "Name":name,
+        "Name": name,
         "Number": number,
         "des": des,
         "image": image
       }));
 
   print(response.body);
+  return response.body;
 }
