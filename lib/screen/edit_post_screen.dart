@@ -43,6 +43,7 @@ class _EditPostState extends State<EditPost> {
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
                               Text(
+
                                 post[index].name,
                                 style: TextStyle(color: Colors.white),
                               ),
