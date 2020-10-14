@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/post_bloc.dart';
+import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/model/posts.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:intl/intl.dart';
@@ -13,6 +14,12 @@ class _PostScreenState extends State<PostScreen> {
   @override
   void initState() {
     super.initState();
+    Ads.createBannerAd()
+      ..load()
+      ..show();
+    Ads.createInterstitialAd()
+      ..load()
+      ..show();
     postListBloc..getPosts();
   }
 
@@ -31,6 +38,7 @@ class _PostScreenState extends State<PostScreen> {
           ),
         ),
       ),
+  
       body: StreamBuilder<List<Post>>(
         stream: postListBloc.subject.stream,
         // ignore: missing_return
@@ -41,7 +49,7 @@ class _PostScreenState extends State<PostScreen> {
                     List<Post> post = snapshot.data;
                     var date = post[index].date;
                     String formattedDate =
-                        DateFormat('yyyy-MM-dd – kk:mm').format(date);
+                        DateFormat('dd-MM-yyyy').format(date);
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Card(

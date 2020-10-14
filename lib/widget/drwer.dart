@@ -1,10 +1,30 @@
+import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
+import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
+  @override
+  _CustomDrawerState createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+
+    RewardedVideoAd videoAd = RewardedVideoAd.instance;
+
+@override
+void initState() { 
+  super.initState();
+  videoAd.listener =
+        (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
+      print("REWARDED VIDEO AD $event");
+     
+    };
+}
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -48,9 +68,9 @@ class CustomDrawer extends StatelessWidget {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => PostScreen()));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
+                Ads.createBannerAd()
+                  ..load()
+                  ..show();
 
                 //                 videoAd.show();
 
@@ -74,9 +94,9 @@ class CustomDrawer extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Chart("Gali"),
                     ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
+                Ads.createBannerAd()
+                  ..load()
+                  ..show();
 
                 //                 videoAd.show();
 
@@ -125,13 +145,13 @@ class CustomDrawer extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Chart("FARIDABAD"),
                     ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
+                Ads.createBannerAd()
+                  ..load()
+                  ..show();
 
-                // createInterstitialAd()
-                //   ..load()
-                //   ..show();
+                Ads.createInterstitialAd()
+                  ..load()
+                  ..show();
                 // launchURL(url[2]);
               },
               title: Text(
@@ -152,13 +172,13 @@ class CustomDrawer extends StatelessWidget {
                     MaterialPageRoute(
                       builder: (context) => Chart("Ghaziabad"),
                     ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
+                Ads.createBannerAd()
+                  ..load()
+                  ..show();
 
-                // createInterstitialAd()
-                //   ..load()
-                //   ..show();
+                Ads.createInterstitialAd()
+                  ..load()
+                  ..show();
                 // launchURL(url[3]);
               },
               title: Text(

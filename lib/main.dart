@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goldnumber/screen/home.dart';
+import 'package:timezone/data/latest.dart' as tz;
 
 void main() {
   runApp(MyApp());
@@ -11,9 +12,10 @@ class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
   Widget build(BuildContext context) {
+    tz.initializeTimeZones();
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
-          home: MaterialApp(
+      home: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
           primaryColor: Color.fromRGBO(149, 76, 233, 1),

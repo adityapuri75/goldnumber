@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/games_bloc.dart';
 import 'package:goldnumber/bloc/recent_games_bloc.dart';
+import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/widget/drwer.dart';
 import 'package:goldnumber/widget/numbers.dart';
 import 'package:goldnumber/widget/recent_number.dart';
@@ -14,6 +15,12 @@ class Home extends StatefulWidget {
 class _HomeState extends State<Home> {
   @override
   void initState() {
+    Ads.createBannerAd()
+      ..load()
+      ..show();
+    Ads.createInterstitialAd()
+      ..load()
+      ..show();
     gameListBloc..getGames();
     recentGameList..getGames();
     super.initState();
@@ -29,7 +36,6 @@ class _HomeState extends State<Home> {
     return Scaffold(
       backgroundColor: Color.fromRGBO(36, 48, 58, 1),
       appBar: AppBar(
-     
         backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(
@@ -39,6 +45,9 @@ class _HomeState extends State<Home> {
             color: Colors.white,
           ),
         ),
+      ),
+      bottomNavigationBar: Container(
+        height: 50,
       ),
       drawer: CustomDrawer(),
       body: RefreshIndicator(
