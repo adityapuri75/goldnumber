@@ -1,30 +1,11 @@
-import 'package:firebase_admob/firebase_admob.dart';
 import 'package:flutter/material.dart';
-import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
+import 'package:goldnumber/widget/policy.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class CustomDrawer extends StatefulWidget {
-  @override
-  _CustomDrawerState createState() => _CustomDrawerState();
-}
-
-class _CustomDrawerState extends State<CustomDrawer> {
-
-    RewardedVideoAd videoAd = RewardedVideoAd.instance;
-
-@override
-void initState() { 
-  super.initState();
-  videoAd.listener =
-        (RewardedVideoAdEvent event, {String rewardType, int rewardAmount}) {
-      print("REWARDED VIDEO AD $event");
-     
-    };
-}
-
+class CustomDrawer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -40,13 +21,14 @@ void initState() {
                 children: <Widget>[
                   Container(
                     margin: EdgeInsets.only(top: 30),
-                    child: null,
+                    child: Image(
+                      image: AssetImage('Images/crown.png'),
+                      height: 400,
+                      width: 400,
+                    ),
                     width: 50,
                     height: 50,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Colors.yellow,
-                    ),
+
                   ),
                   SizedBox(
                     width: 15,
@@ -68,9 +50,9 @@ void initState() {
               onTap: () {
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => PostScreen()));
-                Ads.createBannerAd()
-                  ..load()
-                  ..show();
+                // createBannerAd()
+                //   ..load()
+                //   ..show();
 
                 //                 videoAd.show();
 
@@ -94,9 +76,9 @@ void initState() {
                     MaterialPageRoute(
                       builder: (context) => Chart("Gali"),
                     ));
-                Ads.createBannerAd()
-                  ..load()
-                  ..show();
+                // createBannerAd()
+                //   ..load()
+                //   ..show();
 
                 //                 videoAd.show();
 
@@ -145,13 +127,13 @@ void initState() {
                     MaterialPageRoute(
                       builder: (context) => Chart("FARIDABAD"),
                     ));
-                Ads.createBannerAd()
-                  ..load()
-                  ..show();
+                // createBannerAd()
+                //   ..load()
+                //   ..show();
 
-                Ads.createInterstitialAd()
-                  ..load()
-                  ..show();
+                // createInterstitialAd()
+                //   ..load()
+                //   ..show();
                 // launchURL(url[2]);
               },
               title: Text(
@@ -172,13 +154,13 @@ void initState() {
                     MaterialPageRoute(
                       builder: (context) => Chart("Ghaziabad"),
                     ));
-                Ads.createBannerAd()
-                  ..load()
-                  ..show();
+                // createBannerAd()
+                //   ..load()
+                //   ..show();
 
-                Ads.createInterstitialAd()
-                  ..load()
-                  ..show();
+                // createInterstitialAd()
+                //   ..load()
+                //   ..show();
                 // launchURL(url[3]);
               },
               title: Text(
@@ -197,7 +179,7 @@ void initState() {
                 // });
               },
               title: Text(
-                "Join Telegram For Updates",
+                "Join Telegram",
                 style: TextStyle(
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
@@ -215,14 +197,11 @@ void initState() {
               ),
               leading:
                   Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
-              // onTap: () => Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) => PolicyScreen(),
-              //     )),
-            ),
-            Divider(
-              thickness: 2,
+
+               onTap: () => Navigator.push(
+                   context,
+                   MaterialPageRoute(builder: (context) => PolicyScreen(),
+                   )),
             ),
             ListTile(
               title: Text(

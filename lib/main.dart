@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goldnumber/screen/home.dart';
+import 'package:goldnumber/widget/splash_screen.dart';
 import 'package:timezone/data/latest.dart' as tz;
 
 void main() {
@@ -23,7 +24,11 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
-        home: Home(),
+         initialRoute: '/',
+      routes: <String, WidgetBuilder>{
+        '/': (BuildContext context) => SplashScreen(),
+        '/screen0': (BuildContext context) => Home(),
+      },
       ),
     );
   }
