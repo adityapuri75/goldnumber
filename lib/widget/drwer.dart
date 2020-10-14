@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
+import 'package:goldnumber/screen/policy.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -178,7 +179,7 @@ class CustomDrawer extends StatelessWidget {
                 // });
               },
               title: Text(
-                "Join Telegram For Updates",
+                "Join Telegram",
                 style: TextStyle(
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
@@ -196,11 +197,11 @@ class CustomDrawer extends StatelessWidget {
               ),
               leading:
                   Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
-              // onTap: () => Navigator.push(
-              //     context,
-              //     MaterialPageRoute(
-              //       builder: (context) => PolicyScreen(),
-              //     )),
+               onTap: () => Navigator.push(
+                   context,
+                   MaterialPageRoute(
+                     builder: (context) => PolicyScreen(),
+                   )),
             ),
             Divider(
               thickness: 2,

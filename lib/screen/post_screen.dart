@@ -41,7 +41,7 @@ class _PostScreenState extends State<PostScreen> {
               List<Post> post = snapshot.data;
               var date = post[index].date;
               String formattedDate =
-              DateFormat('dd/MM/yyyy – hh:mm',"ar").format(date);
+              DateFormat('dd/MM/yyyy',).format(date);
               return Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: Card(
