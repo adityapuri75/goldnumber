@@ -57,34 +57,33 @@ class AdminScreen extends StatelessWidget {
               height: 20,
             ),
             Padding(
-
-                padding: const EdgeInsets.symmetric(horizontal: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 30),
               child: Container(
-                  child: TextFormField(
-                    maxLines: 3,
-                    controller: des,
-                    decoration: InputDecoration(
-                      hintText: "Description",
-                      prefixIcon: Icon(
-                        Icons.description,
-                      ),
-                      filled: true,
-                      enabledBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.white)),
-                      focusedBorder: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.white)),
-                      border: OutlineInputBorder(
-                          borderRadius: BorderRadius.circular(20),
-                          borderSide: BorderSide(color: Colors.white)),
+                child: TextFormField(
+                  maxLines: 3,
+                  controller: des,
+                  decoration: InputDecoration(
+                    hintText: "Description",
+                    prefixIcon: Icon(
+                      Icons.description,
                     ),
-                  ),),
+                    filled: true,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                  ),
+                ),
+              ),
             ),
             SizedBox(
               height: 20,
             ),
-
             Padding(
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(

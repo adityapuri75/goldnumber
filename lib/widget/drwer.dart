@@ -197,15 +197,15 @@ class CustomDrawer extends StatelessWidget {
               ),
               leading:
                   Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
+
                onTap: () => Navigator.push(
                    context,
                    MaterialPageRoute(
-                     builder: (context) => PolicyScreen(),
                    )),
-            ),
-            Divider(
-              thickness: 2,
-            ),
+
+              // onTap: () => Navigator.push(
+              //     context,
+              //     MaterialPageRoute(
             ListTile(
               title: Text(
                 "Admin Page",
