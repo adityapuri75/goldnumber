@@ -46,6 +46,7 @@ class RecentGames extends StatelessWidget {
                   ),
                 );
               }),
+              
             )
           : Center(child: CircularProgressIndicator());
                 })),

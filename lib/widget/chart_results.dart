@@ -3,6 +3,7 @@ import 'package:goldnumber/model/chart.dart';
 import 'package:goldnumber/repository/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 
+// ignore: must_be_immutable
 class Chart extends StatefulWidget {
   String name;
   Chart(this.name);

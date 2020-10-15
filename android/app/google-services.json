@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "676216078865",
+    "firebase_url": "https://goldnumber-ae8e8.firebaseio.com",
+    "project_id": "goldnumber-ae8e8",
+    "storage_bucket": "goldnumber-ae8e8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676216078865:android:20310cc3ce65ce1ad027b0",
+        "android_client_info": {
+          "package_name": "com.satta.goldnumber"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "676216078865-s0vsl7dp2hht602ddoaeomm6si1fvrbn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCptN7duTCQpt-OghjS2PfC-d-IpQh1mHM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "676216078865-s0vsl7dp2hht602ddoaeomm6si1fvrbn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
