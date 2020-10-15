@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:goldnumber/bloc/recent_games_bloc.dart';
 import 'package:goldnumber/model/recent_game.dart';
@@ -17,6 +18,14 @@ class RecentGames extends StatelessWidget {
               crossAxisCount: 1,
               physics: NeverScrollableScrollPhysics(),
               children: List.generate(snapshot.data.length, (index) {
+                if(snapshot.data[index].newResult!="{ XX }") {
+                  var id = "tKYlJhW4AyaJUTQcPg1A";
+                  FirebaseFirestore.instance.collection('number')
+                      .doc(id)
+                      .update({
+                    snapshot.data[0].tittle: snapshot.data[0].newResult,
+                  });
+                }
                 return Card(
                   color: Color.fromRGBO(30, 39, 48, 1),
                   elevation: 0.2,

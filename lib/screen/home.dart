@@ -94,7 +94,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(
-          "Guru Satta",
+          "Gold Satta",
           style: GoogleFonts.abrilFatface(
             fontSize: 29,
             color: Colors.white,
@@ -145,3 +145,4 @@ class _HomeState extends State<Home> {
     );
   }
 }
+

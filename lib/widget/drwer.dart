@@ -36,7 +36,7 @@ class CustomDrawer extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 28),
                     child: Text(
-                      "Guru Satta",
+                      "Gold Satta",
                       style: GoogleFonts.abrilFatface(
                           fontSize: 25, color: Colors.white),
                     ),
@@ -59,7 +59,7 @@ class CustomDrawer extends StatelessWidget {
                 // launchURL(url[0]);
               },
               title: Text(
-                "Guess Form",
+                "Guess Forum",
                 style: TextStyle(
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
@@ -203,6 +203,9 @@ class CustomDrawer extends StatelessWidget {
                    MaterialPageRoute(builder: (context) => PolicyScreen(),
                    )),
             ),
+            Divider(
+              thickness: 2,
+            ),
             ListTile(
               title: Text(
                 "Admin Page",
@@ -216,6 +219,9 @@ class CustomDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => AdminScreen(),
                   )),
+            ),
+            Divider(
+              thickness: 2,
             ),
           ],
         ),

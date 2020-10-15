@@ -47,9 +47,6 @@ class _PostScreenState extends State<PostScreen> {
               ? ListView.builder(
                   itemBuilder: (context, index) {
                     List<Post> post = snapshot.data;
-                    var date = post[index].date;
-                    String formattedDate =
-                        DateFormat('dd-MM-yyyy').format(date);
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Card(
@@ -75,17 +72,13 @@ class _PostScreenState extends State<PostScreen> {
                               SizedBox(
                                 height: 5,
                               ),
-                              Text(
-                                formattedDate,
-                                style: TextStyle(color: Colors.grey),
-                              ),
                               SizedBox(
                                 height: 5,
                               ),
                               Text(
                                 snapshot.data[index].number,
                                 style: TextStyle(
-                                    color: Colors.white, fontSize: 25),
+                                    color: Colors.red, fontSize: 25,),
                               ),
                               SizedBox(
                                 height: 7,
