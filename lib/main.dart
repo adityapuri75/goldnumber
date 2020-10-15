@@ -26,12 +26,8 @@ class MyApp extends StatelessWidget {
           primarySwatch: Colors.blue,
           visualDensity: VisualDensity.adaptivePlatformDensity,
         ),
+
          initialRoute: '/',
       routes: <String, WidgetBuilder>{
         '/': (BuildContext context) => SplashScreen(),
-        '/screen0': (BuildContext context) => Home(),
-      },
       ),
-    );
-  }
-}

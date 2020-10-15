@@ -101,8 +101,8 @@ class _PostScreenState extends State<PostScreen> {
                   itemCount: snapshot.data.length,
                 )
               : Center(
-                  child: CircularProgressIndicator(),
-                );
+            child: CircularProgressIndicator(),
+          );
         },
       ),
     );
