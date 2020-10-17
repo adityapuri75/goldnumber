@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
-import 'package:goldnumber/screen/policy.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/widget/chart_results.dart';
 import 'package:goldnumber/widget/policy.dart';

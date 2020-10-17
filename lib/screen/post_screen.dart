@@ -3,7 +3,6 @@ import 'package:goldnumber/bloc/post_bloc.dart';
 import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/model/posts.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:intl/intl.dart';
 
 class PostScreen extends StatefulWidget {
   @override
