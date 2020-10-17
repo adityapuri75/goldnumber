@@ -9,6 +9,8 @@ class AdminScreen extends StatelessWidget {
   final number = TextEditingController();
   final des = TextEditingController();
   final imgUrl = TextEditingController();
+  final vipPhone = TextEditingController();
+  final vipDes = TextEditingController();
 
   showSnak(var message) async {
     if (message.contains("ValidatorError")) {
@@ -36,7 +38,18 @@ class AdminScreen extends StatelessWidget {
         child: ListView(
           children: [
             SizedBox(
-              height: 50,
+              height: 8,
+            ),
+            Center(
+                child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Text(
+                "New Post ",
+                style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+              ),
+            )),
+            SizedBox(
+              height: 16,
             ),
             Container(
                 child: CustomTextField(
@@ -120,7 +133,68 @@ class AdminScreen extends StatelessWidget {
                   style: TextStyle(color: Colors.white),
                 ),
               ),
-            )
+            ),
+            Divider(
+              color: Colors.grey,
+              thickness: 2,
+            ),
+            Center(
+                child: Text(
+              "Change Vip Phone Number ",
+              style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+            )),
+            SizedBox(height: 20,),
+            Container(
+                child: CustomTextField(
+              icon: Icons.phone,
+              hint: "Phone Number",
+              controller: number,
+            )),
+            SizedBox(
+              height: 20,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 30),
+              child: Container(
+                child: TextFormField(
+                  maxLines: 3,
+                  controller: vipDes,
+                  decoration: InputDecoration(
+                    hintText: "Description",
+                    prefixIcon: Icon(
+                      Icons.description,
+                    ),
+                    filled: true,
+                    enabledBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    focusedBorder: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                    border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(20),
+                        borderSide: BorderSide(color: Colors.white)),
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20,),
+          Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => EditPost(),
+                    )),
+                color: Theme.of(context).primaryColorDark,
+                child: Text(
+                  "Done ",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+            SizedBox(height: 100,)
           ],
         ),
       ),

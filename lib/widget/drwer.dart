@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
+import 'package:goldnumber/screen/chart_screen.dart';
+import 'package:goldnumber/screen/policy.dart';
 import 'package:goldnumber/screen/post_screen.dart';
-import 'package:goldnumber/widget/chart_results.dart';
-import 'package:goldnumber/widget/policy.dart';
+import 'package:goldnumber/screen/vip_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class CustomDrawer extends StatelessWidget {
@@ -36,7 +37,7 @@ class CustomDrawer extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 28),
                     child: Text(
-                      "Guru Satta",
+                      "Gold Satta",
                       style: GoogleFonts.abrilFatface(
                           fontSize: 25, color: Colors.white),
                     ),
@@ -59,7 +60,7 @@ class CustomDrawer extends StatelessWidget {
                 // launchURL(url[0]);
               },
               title: Text(
-                "Guess Form",
+                "Guess Forum",
                 style: TextStyle(
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
@@ -74,18 +75,12 @@ class CustomDrawer extends StatelessWidget {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => Chart("Gali"),
+                      builder: (context) => ChartList(),
                     ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
-
-                //                 videoAd.show();
-
-                // launchURL(url[0]);
+        
               },
               title: Text(
-                "GALI CHART",
+                "Monthly CHART",
                 style: TextStyle(
                     color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
               ),
@@ -93,85 +88,8 @@ class CustomDrawer extends StatelessWidget {
             Divider(
               thickness: 2,
             ),
-            ListTile(
-              leading: Icon(Icons.insert_chart,
-                  color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chart("Disawar"),
-                    ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
-
-                // videoAd.show();
-                // launchURL(url[1]);
-              },
-              title: Text(
-                "DESHAWER CHART",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-            ),
-            Divider(
-              thickness: 2,
-            ),
-            ListTile(
-              leading: Icon(Icons.insert_chart,
-                  color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chart("FARIDABAD"),
-                    ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
-
-                // createInterstitialAd()
-                //   ..load()
-                //   ..show();
-                // launchURL(url[2]);
-              },
-              title: Text(
-                "FARIDABAD CHART",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-            ),
-            Divider(
-              thickness: 2,
-            ),
-            ListTile(
-              leading: Icon(Icons.insert_chart,
-                  color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => Chart("Ghaziabad"),
-                    ));
-                // createBannerAd()
-                //   ..load()
-                //   ..show();
-
-                // createInterstitialAd()
-                //   ..load()
-                //   ..show();
-                // launchURL(url[3]);
-              },
-              title: Text(
-                "GAZIYABAD CHART",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-            ),
-            Divider(
-              thickness: 2,
-            ),
+          
+             
             ListTile(
               onTap: () {
                 // setState(() {
@@ -203,6 +121,9 @@ class CustomDrawer extends StatelessWidget {
                    MaterialPageRoute(builder: (context) => PolicyScreen(),
                    )),
             ),
+            Divider(
+              thickness: 2,
+            ),
             ListTile(
               title: Text(
                 "Admin Page",
@@ -216,6 +137,26 @@ class CustomDrawer extends StatelessWidget {
                   MaterialPageRoute(
                     builder: (context) => AdminScreen(),
                   )),
+            ),
+            Divider(
+              thickness: 2,
+            ),
+            ListTile(
+              title: Text(
+                "Vip Subscription",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+              leading:
+                  Icon(Icons.monetization_on, color: Color.fromRGBO(149, 76, 233, 1)),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VipScreen(),
+                  )),
+            ),
+            Divider(
+              thickness: 2,
             ),
           ],
         ),

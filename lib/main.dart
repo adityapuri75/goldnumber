@@ -19,19 +19,19 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       home: MaterialApp(
-        debugShowCheckedModeBanner: false,
-        theme: ThemeData(
-          primaryColor: Color.fromRGBO(149, 76, 233, 1),
-          primaryColorDark: Color.fromRGBO(149, 76, 233, 1),
-          primarySwatch: Colors.blue,
-          visualDensity: VisualDensity.adaptivePlatformDensity,
-        ),
-         initialRoute: '/',
-      routes: <String, WidgetBuilder>{
-        '/': (BuildContext context) => SplashScreen(),
-        '/screen0': (BuildContext context) => Home(),
-      },
-      ),
+          debugShowCheckedModeBanner: false,
+          theme: ThemeData(
+            primaryColor: Color.fromRGBO(149, 76, 233, 1),
+            primaryColorDark: Color.fromRGBO(149, 76, 233, 1),
+            primarySwatch: Colors.blue,
+            visualDensity: VisualDensity.adaptivePlatformDensity,
+          ),
+          initialRoute: '/',
+          routes: <String, WidgetBuilder>{
+            '/': (BuildContext context) => SplashScreen(),
+            '/screen0': (BuildContext context) => Home(),
+          }),
+      
     );
   }
 }

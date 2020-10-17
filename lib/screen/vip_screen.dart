@@ -1,30 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:goldnumber/bloc/post_bloc.dart';
-import 'package:goldnumber/model/ads.dart';
-import 'package:goldnumber/model/posts.dart';
+import 'package:goldnumber/model/vip.dart';
+import 'package:goldnumber/repository/auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-class PostScreen extends StatefulWidget {
+class VipScreen extends StatefulWidget {
+
   @override
-  _PostScreenState createState() => _PostScreenState();
+  _VipScreenState createState() => _VipScreenState();
 }
 
-class _PostScreenState extends State<PostScreen> {
-  @override
-  void initState() {
-    super.initState();
-    Ads.createBannerAd()
-      ..load()
-      ..show();
-    Ads.createInterstitialAd()
-      ..load()
-      ..show();
-    postListBloc..getPosts();
-  }
-
+class _VipScreenState extends State<VipScreen> {
   @override
   Widget build(BuildContext context) {
-    postListBloc..getPosts();
     return Scaffold(
       backgroundColor: Color.fromRGBO(36, 48, 58, 1),
       appBar: AppBar(
@@ -37,14 +24,14 @@ class _PostScreenState extends State<PostScreen> {
           ),
         ),
       ),
-      body: StreamBuilder<List<Post>>(
-        stream: postListBloc.subject.stream,
+      body: FutureBuilder<List<Vip>>(
+        future:getVipPost(),
         // ignore: missing_return
         builder: (context, snapshot) {
           return (snapshot.hasData)
               ? ListView.builder(
                   itemBuilder: (context, index) {
-                    List<Post> post = snapshot.data.reversed.toList();
+                    List<Vip> post = snapshot.data.reversed.toList();
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Card(
@@ -62,24 +49,12 @@ class _PostScreenState extends State<PostScreen> {
                                 width: 150,
                               ),
                               Text(
-                                post[index].name,
+                                post[index].phone,
                                 style: TextStyle(
                                     color: Color.fromRGBO(212, 175, 55, 1),
                                     fontSize: 25),
                               ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              SizedBox(
-                                height: 5,
-                              ),
-                              Text(
-                                post[index].number,
-                                style: TextStyle(
-                                  color: Colors.red,
-                                  fontSize: 25,
-                                ),
-                              ),
+                          
                               SizedBox(
                                 height: 7,
                               ),

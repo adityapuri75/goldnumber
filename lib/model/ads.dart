@@ -25,7 +25,7 @@ class Ads{
         // adUnitId: "ca-app-pub-5219606438368552/1918101307",
         adUnitId: BannerAd.testAdUnitId,
         //Change BannerAd adUnitId with Admob ID
-        size: AdSize.banner,
+        size: AdSize.smartBanner,
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {
           print("BannerAd $event");

@@ -4,6 +4,7 @@ import 'package:goldnumber/model/chart.dart';
 import 'package:goldnumber/model/game_data.dart';
 import 'package:goldnumber/model/posts.dart';
 import 'package:goldnumber/model/recent_game.dart';
+import 'package:goldnumber/model/vip.dart';
 import 'package:http/http.dart' as http;
 
 import '../model/game_data.dart';
@@ -49,7 +50,7 @@ Future newPost(String name, String number, String des, String image) async {
         "des": des,
         "image": image
       }));
-
+  print(response.body);
   return response.body;
 }
 
@@ -58,5 +59,26 @@ Future deletePost(String id) async {
     "https://goldnumber.herokuapp.com/guess/" + id,
   );
 
+  print(response.body);
+
   return response.body;
+}
+
+Future vipPost(String phone, String des) async {
+  var response = await http.post("https://goldnumber.herokuapp.com/vip",
+      headers: <String, String>{
+        'Content-Type': 'application/json; charset=UTF-8',
+      },
+      body: jsonEncode(<String, String>{
+        "Phone": phone,
+        "des": des,
+      }));
+  print(response.body);
+  return response.body;
+}
+
+
+Future<List<Vip>> getVipPost() async {
+  var response = await http.get("https://goldnumber.herokuapp.com/vip");
+  return vipFromJson(response.body);
 }

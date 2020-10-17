@@ -29,6 +29,7 @@ class _ChartState extends State<Chart> {
             builder: (context, snapshot) {
               return snapshot.hasData
                   ? ListView.builder(
+                    padding: EdgeInsets.only(bottom: 60),
                       itemBuilder: (context, index) {
                         List<Datum> game = snapshot.data.data;
                         var name = game;
@@ -89,7 +90,7 @@ class _ChartState extends State<Chart> {
                           ),
                         );
                       },
-                      itemCount: snapshot.data.data.length,
+                      itemCount: 32,
                     )
                   : Center(
                       child: CircularProgressIndicator(),
