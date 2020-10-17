@@ -69,6 +69,23 @@ class CustomDrawer extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
+              title: Text(
+                "VIP Subscription",
+                style: TextStyle(
+                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+              ),
+              leading:
+              Icon(Icons.monetization_on, color: Color.fromRGBO(149, 76, 233, 1)),
+              onTap: () => Navigator.push(
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) => VipScreen(),
+                  )),
+            ),
+            Divider(
+              thickness: 2,
+            ),
+            ListTile(
               leading: Icon(Icons.insert_chart,
                   color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
@@ -141,23 +158,7 @@ class CustomDrawer extends StatelessWidget {
             Divider(
               thickness: 2,
             ),
-            ListTile(
-              title: Text(
-                "Vip Subscription",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-              leading:
-                  Icon(Icons.monetization_on, color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VipScreen(),
-                  )),
-            ),
-            Divider(
-              thickness: 2,
-            ),
+
           ],
         ),
       ),

@@ -17,7 +17,7 @@ class _GuessNumberState extends State<GuessNumber> {
         List<Game> contact = snapshot.data;
         if (snapshot.hasData) {
           return GridView.count(
-            padding: EdgeInsets.only(bottom: 60),
+              padding: EdgeInsets.only(bottom: 100),
             shrinkWrap: true,
             scrollDirection: Axis.vertical,
             crossAxisCount: 2,

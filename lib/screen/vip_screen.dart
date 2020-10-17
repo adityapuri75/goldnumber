@@ -51,8 +51,8 @@ class _VipScreenState extends State<VipScreen> {
                               Text(
                                 post[index].phone,
                                 style: TextStyle(
-                                    color: Color.fromRGBO(212, 175, 55, 1),
-                                    fontSize: 25),
+                                    color: Colors.red,
+                                    fontSize: 27,fontWeight: FontWeight.bold),
                               ),
                           
                               SizedBox(
@@ -65,7 +65,7 @@ class _VipScreenState extends State<VipScreen> {
                                   : Text(
                                       post[index].des,
                                       style: TextStyle(
-                                          color: Colors.white, fontSize: 18),
+                                          color: Colors.white, fontSize: 20),
                                     ),
                             ],
                           )),

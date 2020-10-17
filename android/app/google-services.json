@@ -1,34 +1,34 @@
 {
   "project_info": {
-    "project_number": "680712219207",
-    "firebase_url": "https://gold-number-3f783.firebaseio.com",
-    "project_id": "gold-number-3f783",
-    "storage_bucket": "gold-number-3f783.appspot.com"
+    "project_number": "136141014597",
+    "firebase_url": "https://gold-satta.firebaseio.com",
+    "project_id": "gold-satta",
+    "storage_bucket": "gold-satta.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:680712219207:android:4f2a73266cf65a47b41f62",
+        "mobilesdk_app_id": "1:136141014597:android:632b5ace0a80996838052c",
         "android_client_info": {
           "package_name": "com.satta.goldnumber"
         }
       },
       "oauth_client": [
         {
-          "client_id": "680712219207-sq3kq1v57i32r7vbvcei7q6sa5mkqno4.apps.googleusercontent.com",
+          "client_id": "136141014597-sngi926sm4copd9h2nqjvpnbl4cvmvcf.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyCROQYZG0vg4nE3PK3Y6Dc7bllXRgUyuXQ"
+          "current_key": "AIzaSyDZ1XE6cyIfYkbEPY9r3yEDdvqPMZGglNk"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "680712219207-sq3kq1v57i32r7vbvcei7q6sa5mkqno4.apps.googleusercontent.com",
+              "client_id": "136141014597-sngi926sm4copd9h2nqjvpnbl4cvmvcf.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

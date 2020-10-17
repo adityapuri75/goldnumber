@@ -37,7 +37,7 @@ class _SplashScreenState extends State<SplashScreen> {
               ),
             ),
             Text(
-              "GURU SATTA",
+              "GOLD SATTA",
               style: GoogleFonts.abrilFatface(
                 fontSize: 40,
                 color: Color.fromRGBO(212, 175, 55, 1),

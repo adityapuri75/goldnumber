@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:goldnumber/repository/auth.dart';
 import 'package:goldnumber/screen/edit_post_screen.dart';
+import 'package:goldnumber/screen/vip_edit_screen.dart';
 import 'package:goldnumber/widget/custom_textfield.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AdminScreen extends StatelessWidget {
   final gameName = TextEditingController();
@@ -32,8 +34,14 @@ class AdminScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("Admin Page"),
-      ),
+        centerTitle: true,
+        title: Text(
+        "Admin Page",
+        style: GoogleFonts.abrilFatface(
+        fontSize: 29,
+        color: Colors.white,
+    ),
+      ),),
       body: Container(
         child: ListView(
           children: [
@@ -44,10 +52,12 @@ class AdminScreen extends StatelessWidget {
                 child: Padding(
               padding: const EdgeInsets.all(8.0),
               child: Text(
-                "New Post ",
-                style: TextStyle(fontSize: 20, color: Colors.grey[800]),
-              ),
-            )),
+                  "New Post",
+                  style: GoogleFonts.abrilFatface(
+                    fontSize: 29,
+                    color: Colors.black,
+                  ),
+            ),),),
             SizedBox(
               height: 16,
             ),
@@ -136,19 +146,24 @@ class AdminScreen extends StatelessWidget {
             ),
             Divider(
               color: Colors.grey,
-              thickness: 2,
+              thickness: 4,
+            ),
+            SizedBox(
+              height: 20,
             ),
             Center(
                 child: Text(
               "Change Vip Phone Number ",
-              style: TextStyle(fontSize: 20, color: Colors.grey[800]),
+                    style: GoogleFonts.abrilFatface(
+                      fontSize: 25,
+                      color: Colors.black,)
             )),
             SizedBox(height: 20,),
             Container(
                 child: CustomTextField(
               icon: Icons.phone,
               hint: "Phone Number",
-              controller: number,
+              controller: vipPhone,
             )),
             SizedBox(
               height: 20,
@@ -179,14 +194,19 @@ class AdminScreen extends StatelessWidget {
               ),
             ),
             SizedBox(height: 20,),
-          Padding(
+            Padding(
               padding: const EdgeInsets.all(8.0),
               child: RaisedButton(
-                onPressed: () => Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => EditPost(),
-                    )),
+                onPressed:() async {
+                  if (des.text.isNotEmpty) {
+                    var message =   await vipPost(vipPhone.text,vipDes.text);
+                    showSnak(message);
+                  } else {
+                    var message =
+                    await vipPost(vipPhone.text,null);
+                    showSnak(message);
+                  }
+                },
                 color: Theme.of(context).primaryColorDark,
                 child: Text(
                   "Done ",
@@ -194,6 +214,22 @@ class AdminScreen extends StatelessWidget {
                 ),
               ),
             ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: RaisedButton(
+                onPressed: () => Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => VipEditScreen(),
+                    )),
+                color: Theme.of(context).primaryColorDark,
+                child: Text(
+                  "Edit Post ",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+            ),
+
             SizedBox(height: 100,)
           ],
         ),

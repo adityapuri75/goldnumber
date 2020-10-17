@@ -43,7 +43,8 @@ class _PostScreenState extends State<PostScreen> {
         builder: (context, snapshot) {
           return (snapshot.hasData)
               ? ListView.builder(
-                  itemBuilder: (context, index) {
+            padding: EdgeInsets.only(bottom: 100),
+            itemBuilder: (context, index) {
                     List<Post> post = snapshot.data.reversed.toList();
                     return Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -65,7 +66,7 @@ class _PostScreenState extends State<PostScreen> {
                                 post[index].name,
                                 style: TextStyle(
                                     color: Color.fromRGBO(212, 175, 55, 1),
-                                    fontSize: 25),
+                                    fontSize: 26,fontWeight: FontWeight.bold),
                               ),
                               SizedBox(
                                 height: 5,
@@ -76,7 +77,7 @@ class _PostScreenState extends State<PostScreen> {
                               Text(
                                 post[index].number,
                                 style: TextStyle(
-                                  color: Colors.red,
+                                  color: Colors.red,fontWeight: FontWeight.bold,
                                   fontSize: 25,
                                 ),
                               ),

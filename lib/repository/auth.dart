@@ -82,3 +82,14 @@ Future<List<Vip>> getVipPost() async {
   var response = await http.get("https://goldnumber.herokuapp.com/vip");
   return vipFromJson(response.body);
 }
+
+
+Future vipDeletePost(String id) async {
+  var response = await http.delete(
+    "https://goldnumber.herokuapp.com/vip/" + id,
+  );
+
+  print(response.body);
+
+  return response.body;
+}

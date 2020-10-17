@@ -22,8 +22,8 @@ class Ads{
 
   static BannerAd createBannerAd() {
     return BannerAd(
-        // adUnitId: "ca-app-pub-5219606438368552/1918101307",
-        adUnitId: BannerAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2230868896500775/8621497998",
+
         //Change BannerAd adUnitId with Admob ID
         size: AdSize.smartBanner,
         targetingInfo: targetingInfo,
@@ -34,7 +34,7 @@ class Ads{
 
   static InterstitialAd createInterstitialAd() {
     return InterstitialAd(
-        adUnitId: InterstitialAd.testAdUnitId,
+        adUnitId: "ca-app-pub-2230868896500775/4682252984",
         //Change Interstitial AdUnitId with Admob ID
         targetingInfo: targetingInfo,
         listener: (MobileAdEvent event) {

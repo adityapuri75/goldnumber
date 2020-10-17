@@ -19,13 +19,13 @@ class RecentGames extends StatelessWidget {
               physics: NeverScrollableScrollPhysics(),
               children: List.generate(snapshot.data.length, (index) {
                 if(snapshot.data[index].newResult!="{ XX }") {
-                  var id = "tKYlJhW4AyaJUTQcPg1A";
-                  FirebaseFirestore.instance.collection('number')
-                      .doc(id)
-                      .update({
-                    snapshot.data[0].tittle: snapshot.data[0].newResult,
-                  });
-                }
+                var id = "tKYlJhW4AyaJUTQcPg1A";
+                FirebaseFirestore.instance.collection('number')
+                    .doc(id)
+                    .update({
+                  snapshot.data[0].tittle: snapshot.data[0].newResult,
+                });
+              }
                 return Card(
                   color: Color.fromRGBO(30, 39, 48, 1),
                   elevation: 0.2,
