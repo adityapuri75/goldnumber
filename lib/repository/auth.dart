@@ -15,7 +15,7 @@ Future<List<Game>> getData() async {
 }
 
 Future<List<RecentGame>> getRecentData() async {
-  var response = await http.get("https://goldnumber.herokuapp.com/game/recent");
+  var response = await http.get("https://goldnumber123.herokuapp.com/game/recent");
   return recentGameFromJson(response.body);
 }
 
@@ -65,7 +65,7 @@ Future deletePost(String id) async {
 }
 
 Future vipPost(String phone, String des) async {
-  var response = await http.post("https://goldnumber.herokuapp.com/vip",
+  var response = await http.post("https://goldnumber123.herokuapp.com/vip",
       headers: <String, String>{
         'Content-Type': 'application/json; charset=UTF-8',
       },
@@ -79,14 +79,14 @@ Future vipPost(String phone, String des) async {
 
 
 Future<List<Vip>> getVipPost() async {
-  var response = await http.get("https://goldnumber.herokuapp.com/vip");
+  var response = await http.get("https://goldnumber123.herokuapp.com/vip");
   return vipFromJson(response.body);
 }
 
 
 Future vipDeletePost(String id) async {
   var response = await http.delete(
-    "https://goldnumber.herokuapp.com/vip/" + id,
+    "https://goldnumber123.herokuapp.com/vip/" + id,
   );
 
   print(response.body);

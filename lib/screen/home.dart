@@ -10,6 +10,7 @@ import 'package:goldnumber/widget/drwer.dart';
 import 'package:goldnumber/widget/numbers.dart';
 import 'package:goldnumber/widget/recent_number.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class Home extends StatefulWidget {
   @override
@@ -17,11 +18,24 @@ class Home extends StatefulWidget {
 }
 
 class _HomeState extends State<Home> {
-
-
   final FirebaseMessaging _firebaseMessaging = FirebaseMessaging();
   final List<Message> messages = [];
 
+  String _launchUrl = 'https://t.me/gurukasatta';
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'header_key': 'header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
+  bool _isLoading=false;
   _getToken() async {
     _firebaseMessaging.getToken().then((token) async {
       print("Device Token: $token");
@@ -37,23 +51,18 @@ class _HomeState extends State<Home> {
     });
   }
 
-
   @override
   void initState() {
-    
     _getToken();
     _firebaseMessaging.configure(
-
       onMessage: (Map<String, dynamic> message) async {
         print("onMessage: $message");
         final notification = message['notification'];
         setState(() {
-          
           messages.add(Message(
               title: notification['title'], body: notification['body']));
         });
       },
-
       onLaunch: (Map<String, dynamic> message) async {
         print("onLaunch: $message");
 
@@ -65,7 +74,6 @@ class _HomeState extends State<Home> {
           ));
         });
       },
-      
       onResume: (Map<String, dynamic> message) async {
         print("onResume: $message");
       },
@@ -73,9 +81,7 @@ class _HomeState extends State<Home> {
     Ads.createBannerAd()
       ..load()
       ..show();
-    Ads.createInterstitialAd()
-      ..load()
-      ..show();
+  
     gameListBloc..getGames();
     recentGameList..getGames();
     super.initState();
@@ -86,6 +92,12 @@ class _HomeState extends State<Home> {
     recentGameList..getGames();
   }
 
+  callme() async {
+    await Future.delayed(Duration(seconds: 2));
+      setState(() {
+        _isLoading = false;
+      });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -94,7 +106,7 @@ class _HomeState extends State<Home> {
         backgroundColor: Color.fromRGBO(149, 76, 233, 1),
         centerTitle: true,
         title: Text(
-          "Gold Satta",
+          "Gold Satta King",
           style: GoogleFonts.abrilFatface(
             fontSize: 29,
             color: Colors.white,
@@ -102,14 +114,32 @@ class _HomeState extends State<Home> {
         ),
         actions: [
           Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: GestureDetector(onTap: _getToken,child: SvgPicture.asset('Images/icon.svg')),
-          )
+            padding: const EdgeInsets.fromLTRB(3, 5, 6, 0),
+            child: GestureDetector(
+                onTap: () {
+                  setState(() {
+                    _isLoading =true;
+
+                  });
+                 callme();
+
+                },
+                child: Icon(
+                  Icons.refresh,
+                  size: 30,
+                  color: Colors.red[100],
+                )),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(0.0),
+            child: GestureDetector(
+                onTap: () => _launchInBrowser(_launchUrl),
+                child: SvgPicture.asset('Images/icon.svg')),
+          ),
         ],
       ),
-   
       drawer: CustomDrawer(),
-      body: RefreshIndicator(
+      body: !_isLoading ? RefreshIndicator(
         onRefresh: () => _getData(),
         child: Container(
           child: Column(
@@ -139,8 +169,7 @@ class _HomeState extends State<Home> {
             ],
           ),
         ),
-      ),
+      ):Center(child: CircularProgressIndicator(),),
     );
   }
 }
-

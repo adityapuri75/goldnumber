@@ -1,12 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:goldnumber/model/ads.dart';
 import 'package:goldnumber/screen/admin_screen.dart';
 import 'package:goldnumber/screen/chart_screen.dart';
 import 'package:goldnumber/screen/policy.dart';
 import 'package:goldnumber/screen/post_screen.dart';
 import 'package:goldnumber/screen/vip_screen.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class CustomDrawer extends StatelessWidget {
+class CustomDrawer extends StatefulWidget {
+  @override
+  _CustomDrawerState createState() => _CustomDrawerState();
+}
+
+class _CustomDrawerState extends State<CustomDrawer> {
+  String _launchUrl = 'https://t.me/gurukasatta';
+  String _launchUrl1 = 'https://www.instagram.com/_zirkon/';
+  Future<void> _launchInBrowser(String url) async {
+    if (await canLaunch(url)) {
+      await launch(
+        url,
+        forceSafariVC: false,
+        forceWebView: false,
+        headers: <String, String>{'header_key': 'header_value'},
+      );
+    } else {
+      throw 'Could not launch $url';
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Drawer(
@@ -29,7 +51,6 @@ class CustomDrawer extends StatelessWidget {
                     ),
                     width: 50,
                     height: 50,
-
                   ),
                   SizedBox(
                     width: 15,
@@ -37,7 +58,7 @@ class CustomDrawer extends StatelessWidget {
                   Container(
                     margin: EdgeInsets.only(top: 28),
                     child: Text(
-                      "Gold Satta",
+                      "Gold Satta King",
                       style: GoogleFonts.abrilFatface(
                           fontSize: 25, color: Colors.white),
                     ),
@@ -49,6 +70,9 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.multiline_chart,
                   color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
+                Ads.createInterstitialAd()
+                  ..load()
+                  ..show();
                 Navigator.push(context,
                     MaterialPageRoute(builder: (context) => PostScreen()));
                 // createBannerAd()
@@ -69,19 +93,23 @@ class CustomDrawer extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              title: Text(
-                "VIP Subscription",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-              leading:
-              Icon(Icons.monetization_on, color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => VipScreen(),
-                  )),
-            ),
+                title: Text(
+                  "VIP Membership",
+                  style: TextStyle(
+                      color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+                ),
+                leading: Icon(Icons.monetization_on,
+                    color: Color.fromRGBO(149, 76, 233, 1)),
+                onTap: () {
+                  Ads.createInterstitialAd()
+                    ..load()
+                    ..show();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => VipScreen(),
+                      ));
+                }),
             Divider(
               thickness: 2,
             ),
@@ -89,12 +117,14 @@ class CustomDrawer extends StatelessWidget {
               leading: Icon(Icons.insert_chart,
                   color: Color.fromRGBO(149, 76, 233, 1)),
               onTap: () {
+                Ads.createInterstitialAd()
+                  ..load()
+                  ..show();
                 Navigator.push(
                     context,
                     MaterialPageRoute(
                       builder: (context) => ChartList(),
                     ));
-        
               },
               title: Text(
                 "Monthly CHART",
@@ -105,13 +135,11 @@ class CustomDrawer extends StatelessWidget {
             Divider(
               thickness: 2,
             ),
-          
-             
             ListTile(
               onTap: () {
-                // setState(() {
-                //   // _launched = _launchInBrowser(_launchUrl);
-                // });
+                setState(() {
+                  _launchInBrowser(_launchUrl);
+                });
               },
               title: Text(
                 "Join Telegram",
@@ -125,40 +153,44 @@ class CustomDrawer extends StatelessWidget {
               thickness: 2,
             ),
             ListTile(
-              title: Text(
-                "Privicy Policy",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-              leading:
-                  Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
-
-               onTap: () => Navigator.push(
-                   context,
-                   MaterialPageRoute(builder: (context) => PolicyScreen(),
-                   )),
-            ),
+                title: Text(
+                  "Privacy Policy",
+                  style: TextStyle(
+                      color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+                ),
+                leading:
+                    Icon(Icons.person, color: Color.fromRGBO(149, 76, 233, 1)),
+                onTap: () {
+                    Ads.createInterstitialAd()
+      ..load()
+      ..show();
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => PolicyScreen(),
+                      ));
+                }),
             Divider(
               thickness: 2,
             ),
-            ListTile(
-              title: Text(
-                "Admin Page",
-                style: TextStyle(
-                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
-              ),
-              leading:
-                  Icon(Icons.settings_applications, color: Color.fromRGBO(149, 76, 233, 1)),
-              onTap: () => Navigator.push(
-                  context,
-                  MaterialPageRoute(
-                    builder: (context) => AdminScreen(),
-                  )),
-            ),
-            Divider(
-              thickness: 2,
-            ),
-
+//            ListTile(
+//              title: Text(
+//                "Admin Page",
+//                style: TextStyle(
+//                    color: Color.fromRGBO(212, 175, 55, 1), fontSize: 16),
+//              ),
+//              leading: Icon(Icons.settings_applications,
+//                  color: Color.fromRGBO(149, 76, 233, 1)),
+//              onTap: () => Navigator.push(
+//                  context,
+//                  MaterialPageRoute(
+//                    builder: (context) => AdminScreen(),
+//                  )),
+//            ),
+//            Divider(
+//              thickness: 2,
+//            ),
+          
           ],
         ),
       ),

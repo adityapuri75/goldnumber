@@ -30,7 +30,7 @@ class _PostScreenState extends State<PostScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Guess Number",
+          "Guess Forum",
           style: GoogleFonts.abrilFatface(
             fontSize: 29,
             color: Colors.white,

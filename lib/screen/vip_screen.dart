@@ -17,7 +17,7 @@ class _VipScreenState extends State<VipScreen> {
       appBar: AppBar(
         centerTitle: true,
         title: Text(
-          "Guess Number",
+          "VIP",
           style: GoogleFonts.abrilFatface(
             fontSize: 29,
             color: Colors.white,

@@ -32,10 +32,14 @@ class RecentGames extends StatelessWidget {
                   child: Column(
                     children: [
                       Padding(
+                        padding: const EdgeInsets.all(2.0),
+                        child: Text("(सबसे पहले रिजल्ट यही पर)",style: TextStyle(fontSize: 18,color: Colors.white),),
+                      ),
+                      Padding(
                       padding: const EdgeInsets.all(0.0),
                   child: Image(
                     image: AssetImage('Images/crown.png'),
-                    height: 80,
+                    height: 60,
                     width: 150,
                   ),
                 ),
@@ -43,7 +47,7 @@ class RecentGames extends StatelessWidget {
                           style: TextStyle(
                               fontSize: 25, color: Colors.green)),
                       SizedBox(
-                        height: 6,
+                        height: 4,
                       ),
                       Text(
                         snapshot.data[index].tittle,

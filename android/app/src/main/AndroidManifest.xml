@@ -8,12 +8,16 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <application
         android:name="io.flutter.app.FlutterApplication"
-        android:label="Gold Satta"
+        android:label="Gold Satta King"
         android:icon="@mipmap/ic_launcher">
+    
+        <meta-data
+         android:name="com.google.firebase.messaging.default_notification_icon"
+         android:resource="@drawable/ic_stat_assistant_photo" />
 
         <meta-data
             android:name="com.google.android.gms.ads.APPLICATION_ID"
-            android:value="ca-app-pub-2230868896500775~3673080185"/>
+            android:value="ca-app-pub-7796008573350978~2736253095"/>
             
         <activity
             android:name=".MainActivity"

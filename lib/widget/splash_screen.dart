@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:async';
 
 import 'package:goldnumber/bloc/games_bloc.dart';
+import 'package:goldnumber/bloc/recent_games_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -14,7 +15,8 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     gameListBloc..getGames();
-    Future.delayed(Duration(seconds: 5), () {
+    recentGameList..getGames();
+    Future.delayed(Duration(seconds: 3), () {
       Navigator.pushNamedAndRemoveUntil(context, '/screen0', (route) => false);
     });
   }
